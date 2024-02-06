@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Quiz</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        #quiz-container {
+            width: 90%;
+            max-width: 600px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .btn-grid {
+            display: grid;
+            grid-gap: 10px;
+            margin-top: 20px;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: #2979ff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div id="quiz-container">
+        <div id="quiz-header">
+            <h1>Online Quiz</h1>
+            <button id="start-btn">Start Quiz</button>
+        </div>
+        <div id="question-container" class="hide">
+            <div id="question">Question text</div>
+            <div id="answer-buttons" class="btn-grid">
+                <!-- Answer buttons will be dynamically added here -->
+            </div>
+        </div>
+        <div id="results-container" class="hide">
+            <h2 id="final-score"></h2>
+            <button id="restart-btn">Restart Quiz</button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const startButton = document.getElementById('start-btn');
+    const questionContainerElement = document.getElementById('question-container');
+    const questionElement = document.getElementById('question');
+    const answerButtonsElement = document.getElementById('answer-buttons');
+    const resultsContainer = document.getElementById('results-container');
+    const finalScoreElement = document.getElementById('final-score');
+
+    let shuffledQuestions, currentQuestionIndex, score;
+
+    // Expanded questions array
+    const questions = [
+        {
+            question: 'What is 2 + 2?',
+            answers: [
+                { text: '4', correct: true },
+                { text: '22', correct: false },
+                { text: '3', correct: false },
+                { text: '5', correct: false }
+            ]
+        },
+        {
+            question: 'Capital of France?',
+            answers: [
+                { text: 'Paris', correct: true },
+                { text: 'London', correct: false },
+                { text: 'Berlin', correct: false },
+                { text: 'Madrid', correct: false }
+            ]
+        },
+        {
+            question: 'Largest planet in our solar system?',
+            answers: [
+                { text: 'Jupiter', correct: true },
+                { text: 'Mars', correct: false },
+                { text: 'Earth', correct: false },
+                { text: 'Saturn', correct: false }
+            ]
+        },
+        {
+            question: 'Fastest land animal?',
+            answers: [
+                { text: 'Cheetah', correct: true },
+                { text: 'Lion', correct: false },
+                { text: 'Horse', correct: false },
+                { text: 'Ostrich', correct: false }
+            ]
+        },
+        {
+            question: 'H2O is the chemical formula for?',
+            answers: [
+                { text: 'Water', correct: true },
+                { text: 'Hydrogen Peroxide', correct: false },
+                { text: 'Salt', correct: false },
+                { text: 'Oxygen', correct: false }
+            ]
+        },
+        // Add more questions as needed
+    ];
+
+    startButton.addEventListener('click', startQuiz);
+
+    function startQuiz() {
+        score = 0;
+        startButton.classList.add('hide');
+        shuffledQuestions = questions.sort(() => Math.random() - .5);
+        currentQuestionIndex = 0;
+        questionContainerElement.classList.remove('hide');
+        setNextQuestion();
+    }
+
+    function setNextQuestion() {
+        resetState();
+        showQuestion(shuffledQuestions[currentQuestionIndex]);
+    }
+
+    function showQuestion(question) {
+        questionElement.innerText = question.question;
+        question.answers.forEach(answer => {
+            const button = document.createElement('button');
+            button.innerText = answer.text;
+            button.classList.add('btn');
+            button.addEventListener('click', () => selectAnswer(answer));
+            answerButtonsElement.appendChild(button);
+        });
+    }
+
+    function resetState() {
+        while (answerButtonsElement.firstChild) {
+            answerButtonsElement.removeChild(answerButtonsElement.firstChild);
+        }
+    }
+
+    function selectAnswer(answer) {
+        if (answer.correct) {
+            score++;
+            alert('Correct!');
+        } else {
+            alert('Wrong Answer!');
+        }
+        if (shuffledQuestions.length > currentQuestionIndex + 1) {
+            currentQuestionIndex++;
+            setNextQuestion();
+        } else {
+            gameOver();
+        }
+    }
+
+    function gameOver() {
+        questionContainerElement.classList.add('hide');
+        resultsContainer.classList.remove('hide');
+        finalScoreElement.innerText = `Quiz Completed! Your Score: ${score} out of ${questions.length}`;
+        alert(`Game Over! Your Score: ${score} out of ${questions.length}`);
+    }
+
+    document.getElementById('restart-btn').addEventListener('click', restartQuiz);
+
+    function restartQuiz() {
+        resultsContainer.classList.add('hide');
+        startButton.classList.remove('hide');
+        resetState();
+    }
+});
+
+    </script>
+</body>
+</html>
