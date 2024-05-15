@@ -1,126 +1,103 @@
-<script>
-        document.addEventListener('DOMContentLoaded', () => {
-    const startButton = document.getElementById('start-btn');
-    const questionContainerElement = document.getElementById('question-container');
-    const questionElement = document.getElementById('question');
-    const answerButtonsElement = document.getElementById('answer-buttons');
-    const resultsContainer = document.getElementById('results-container');
-    const finalScoreElement = document.getElementById('final-score');
+// Define quiz questions and answers
+const questions = [
+    {
+        question: 'What is 2 + 2?',
+        answers: [
+            { text: '4', correct: true },
+            { text: '22', correct: false },
+            { text: '3', correct: false },
+            { text: '5', correct: false }
+        ]
+    },
+    {
+        question: 'Capital of France?',
+        answers: [
+            { text: 'Paris', correct: true },
+            { text: 'London', correct: false },
+            { text: 'Berlin', correct: false },
+            { text: 'Madrid', correct: false }
+        ]
+    },
+    // Add more questions here
+];
 
-    let shuffledQuestions, currentQuestionIndex, score;
+let currentQuestionIndex = 0;
+let score = 0;
 
-    // Expanded questions array
-    const questions = [
-        {
-            question: 'What is 2 + 2?',
-            answers: [
-                { text: '4', correct: true },
-                { text: '22', correct: false },
-                { text: '3', correct: false },
-                { text: '5', correct: false }
-            ]
-        },
-        {
-            question: 'Capital of France?',
-            answers: [
-                { text: 'Paris', correct: true },
-                { text: 'London', correct: false },
-                { text: 'Berlin', correct: false },
-                { text: 'Madrid', correct: false }
-            ]
-        },
-        {
-            question: 'Largest planet in our solar system?',
-            answers: [
-                { text: 'Jupiter', correct: true },
-                { text: 'Mars', correct: false },
-                { text: 'Earth', correct: false },
-                { text: 'Saturn', correct: false }
-            ]
-        },
-        {
-            question: 'Fastest land animal?',
-            answers: [
-                { text: 'Cheetah', correct: true },
-                { text: 'Lion', correct: false },
-                { text: 'Horse', correct: false },
-                { text: 'Ostrich', correct: false }
-            ]
-        },
-        {
-            question: 'H2O is the chemical formula for?',
-            answers: [
-                { text: 'Water', correct: true },
-                { text: 'Hydrogen Peroxide', correct: false },
-                { text: 'Salt', correct: false },
-                { text: 'Oxygen', correct: false }
-            ]
-        },
-        // Add more questions as needed
-    ];
+// Select HTML elements
+const startButton = document.getElementById('start-btn');
+const nextButton = document.getElementById('next-btn');
+const questionContainer = document.getElementById('question-container');
+const questionElement = document.getElementById('question');
+const answerButtonsElement = document.getElementById('answer-buttons');
+const resultContainer = document.getElementById('results-container');
+const finalScoreElement = document.getElementById('final-score');
 
-    startButton.addEventListener('click', startQuiz);
-
-    function startQuiz() {
-        score = 0;
-        startButton.classList.add('hide');
-        shuffledQuestions = questions.sort(() => Math.random() - .5);
-        currentQuestionIndex = 0;
-        questionContainerElement.classList.remove('hide');
-        setNextQuestion();
-    }
-
-    function setNextQuestion() {
-        resetState();
-        showQuestion(shuffledQuestions[currentQuestionIndex]);
-    }
-
-    function showQuestion(question) {
-        questionElement.innerText = question.question;
-        question.answers.forEach(answer => {
-            const button = document.createElement('button');
-            button.innerText = answer.text;
-            button.classList.add('btn');
-            button.addEventListener('click', () => selectAnswer(answer));
-            answerButtonsElement.appendChild(button);
-        });
-    }
-
-    function resetState() {
-        while (answerButtonsElement.firstChild) {
-            answerButtonsElement.removeChild(answerButtonsElement.firstChild);
-        }
-    }
-
-    function selectAnswer(answer) {
-        if (answer.correct) {
-            score++;
-            alert('Correct!');
-        } else {
-            alert('Wrong Answer!');
-        }
-        if (shuffledQuestions.length > currentQuestionIndex + 1) {
-            currentQuestionIndex++;
-            setNextQuestion();
-        } else {
-            gameOver();
-        }
-    }
-
-    function gameOver() {
-        questionContainerElement.classList.add('hide');
-        resultsContainer.classList.remove('hide');
-        finalScoreElement.innerText = `Quiz Completed! Your Score: ${score} out of ${questions.length}`;
-        alert(`Game Over! Your Score: ${score} out of ${questions.length}`);
-    }
-
-    document.getElementById('restart-btn').addEventListener('click', restartQuiz);
-
-    function restartQuiz() {
-        resultsContainer.classList.add('hide');
-        startButton.classList.remove('hide');
-        resetState();
-    }
+// Add event listeners
+startButton.addEventListener('click', startQuiz);
+nextButton.addEventListener('click', () => {
+    currentQuestionIndex++;
+    setNextQuestion();
 });
 
-    </script>
+// Function to start the quiz
+function startQuiz() {
+    startButton.classList.add('hide');
+    resultContainer.classList.add('hide');
+    questionContainer.classList.remove('hide');
+    currentQuestionIndex = 0;
+    score = 0;
+    setNextQuestion();
+}
+
+// Function to set the next question
+function setNextQuestion() {
+    resetState();
+    if (currentQuestionIndex < questions.length) {
+        showQuestion(questions[currentQuestionIndex]);
+    } else {
+        showResults();
+    }
+}
+
+// Function to display a question
+function showQuestion(question) {
+    questionElement.innerText = question.question;
+    question.answers.forEach(answer => {
+        const button = document.createElement('button');
+        button.innerText = answer.text;
+        button.classList.add('btn');
+        button.addEventListener('click', () => selectAnswer(answer.correct));
+        answerButtonsElement.appendChild(button);
+    });
+}
+
+// Function to reset the state of the quiz
+function resetState() {
+    nextButton.classList.add('hide');
+    while (answerButtonsElement.firstChild) {
+        answerButtonsElement.removeChild(answerButtonsElement.firstChild);
+    }
+}
+
+// Function to handle answer selection
+function selectAnswer(correct) {
+    if (correct) {
+        score++;
+    }
+    if (currentQuestionIndex < questions.length - 1) {
+        nextButton.classList.remove('hide');
+    } else {
+        showResults();
+    }
+}
+
+// Function to display quiz results
+function showResults() {
+    questionContainer.classList.add('hide');
+    resultContainer.classList.remove('hide');
+    finalScoreElement.innerText = `Your Score: ${score} out of ${questions.length}`;
+}
+
+// Initialize the quiz
+startQuiz();
