@@ -1,45 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Title and favicon -->
     <title>Online Quiz</title>
-    <link rel="icon" href="favicon.ico">
-
-    <!-- External CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" href="images/favicon.ico">
 </head>
-
 <body>
-    <!-- Header -->
-    <header>
-        <h1>Online Quiz</h1>
-    </header>
-
-    <!-- Main content -->
-    <main>
-        <!-- Question container -->
-        <div id="quiz-container" class="hide">
-            <div id="question"></div>
-            <div id="answer-buttons" class="btn-grid"></div>
+    <div id="quiz-container">
+        <div id="quiz-header">
+            <h1>Online Quiz</h1>
+            <button id="start-btn">Start Quiz</button>
         </div>
-
-        <!-- Results container -->
+        <div id="question-container" class="hide">
+            <div id="question">Question text</div>
+            <div id="answer-buttons" class="btn-grid">
+                <!-- Answer buttons will be dynamically added here -->
+            </div>
+        </div>
         <div id="results-container" class="hide">
             <h2 id="final-score"></h2>
-            <button id="restart-btn" class="btn">Restart Quiz</button>
+            <button id="restart-btn">Restart Quiz</button>
         </div>
-
-        <!-- Start button -->
-        <button id="start-btn" class="btn">Start Quiz</button>
-    </main>
-
-    <!-- External JavaScript -->
-    <script src="script.js" defer></script>
+    </div>
+    <script src="js/script.js"></script>
 </body>
-
 </html>

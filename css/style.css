@@ -36,27 +36,4 @@ button {
     border-radius: 5px;
     padding: 10px 20px;
     font-size: 16px;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #1e65e0;
-}
-
-h1, h2 {
-    color: #333;
-}
-
-#quiz-header {
-    margin-bottom: 20px;
-}
-
-/* Styles for the 404 page */
-#not-found-container {
-    text-align: center;
-}
-
-#not-found-container img {
-    width: 200px;
-    margin-bottom: 20px;
 }
