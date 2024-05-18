@@ -13,6 +13,11 @@ header, footer {
     margin: 20px;
 }
 
+header .logo {
+    max-width: 100px;
+    margin-bottom: 10px;
+}
+
 #quiz-container {
     width: 90%;
     max-width: 600px;

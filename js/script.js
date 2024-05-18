@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Sound effects for correct and incorrect answers
     const correctSound = new Audio('sounds/correct.mp3');
-    const wrongSound = new Audio('sounds/wrong.mp3');
+    const wrongSound = new Audio('sounds/incorrect.mp3');
 
     // Event listener for start button click
     startButton.addEventListener('click', startQuiz);
