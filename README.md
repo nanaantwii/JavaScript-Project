@@ -1,10 +1,10 @@
-# Online Quiz (Javascript Project)
+# QuizzyMind
 
 ## Project Overview
 
-Welcome to the Online Quiz, an engaging web application designed to test your general knowledge across various subjects. Users can enjoy a challenging quiz experience while tracking their scores, making it both entertaining and educational.
+Welcome to QuizzyMind, an engaging web application designed to test your general knowledge across various subjects. Users can enjoy a challenging quiz experience while tracking their scores, making it both entertaining and educational.
 
-![Online Quiz Logo](images/logo.png)
+![QuizzyMind Logo](images/logo.png)
 
 ## Table of Contents
 
@@ -64,17 +64,11 @@ Welcome to the Online Quiz, an engaging web application designed to test your ge
 
 The project is deployed on GitHub Pages:
 
-1. **Clone the Repository**: `git clone https://github.com/nanaantwii/JavaScript-Project`
-2. **Navigate to the Repository**: `cd JavaScript-Project`
-3. **Open `index.html` in Your Browser**.
+1. In the repository settings, navigate to the "Pages" section.
+2. Select the `main` branch as the source and save.
+3. Once the `main` branch is seclected, the link to the deployed site will be provided.
 
-To deploy on GitHub Pages:
-
-1. Push the code to the `main` branch of your repository.
-2. In the repository settings, navigate to the "Pages" section.
-3. Select the `main` branch as the source and save.
-
-The live link to the project: [Online Quiz](https://nanaantwii.github.io/JavaScript-Project/)
+The live link to the project: [QuizzyMind](https://nanaantwii.github.io/QuizzyMind/)
 
 ## Credits
 
