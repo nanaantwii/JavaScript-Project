@@ -1,3 +1,4 @@
+/* Basic styling for body and html to ensure full height and zero margin */
 body, html {
     height: 100%;
     margin: 0;
@@ -8,6 +9,7 @@ body, html {
     background: linear-gradient(to right, #ff7e5f, #feb47b);
 }
 
+/* Styling for the header section */
 header {
     display: flex;
     justify-content: space-between;
@@ -16,30 +18,40 @@ header {
     padding: 10px 20px;
     background-color: #fff;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
+/* Styling for the logo in the header */
 header .logo {
     max-width: 50px;
 }
 
+/* Centering the main title in the header */
 header h1 {
     flex-grow: 1;
     text-align: center;
     margin: 0;
 }
 
+/* Styling for the score display in the header */
 #score-header {
     font-size: 1.2em;
 }
 
+/* Ensuring main content is centered and spaced appropriately */
 main {
     flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
+    margin-top: 80px; /* Adjusted to account for the fixed header */
 }
 
+/* Styling for the quiz container */
 #quiz-container {
     width: 90%;
     max-width: 600px;
@@ -51,21 +63,25 @@ main {
     animation: fadeIn 1s ease-in-out;
 }
 
+/* Keyframes for fade-in animation */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
+/* Utility class to hide elements */
 .hide {
     display: none;
 }
 
+/* Styling for the grid of answer buttons */
 .btn-grid {
     display: grid;
     grid-gap: 10px;
     margin-top: 20px;
 }
 
+/* Basic button styling with hover effects */
 button {
     cursor: pointer;
     background-color: #2979ff;
@@ -77,11 +93,13 @@ button {
     transition: background-color 0.3s, transform 0.3s;
 }
 
+/* Hover effect for buttons */
 button:hover {
     background-color: #1c54b2;
     transform: scale(1.05);
 }
 
+/* Styling for the progress bar container */
 #progress-bar {
     width: 100%;
     background-color: #e0e0e0;
@@ -89,6 +107,7 @@ button:hover {
     margin-bottom: 20px;
 }
 
+/* Styling for the progress bar */
 #progress {
     height: 10px;
     background-color: #2979ff;
@@ -96,6 +115,7 @@ button:hover {
     width: 0;
 }
 
+/* Styling for correct and wrong answer buttons */
 .correct {
     background-color: #4caf50;
 }
@@ -104,6 +124,7 @@ button:hover {
     background-color: #f44336;
 }
 
+/* Animation for result container */
 #results-container {
     animation: fadeIn 1s ease-in-out;
 }
