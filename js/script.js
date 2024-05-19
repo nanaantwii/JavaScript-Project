@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultsContainer = document.getElementById('results-container');
     const finalScoreElement = document.getElementById('final-score');
     const progressBar = document.getElementById('progress');
+    const scoreHeader = document.getElementById('current-score');
     
     let shuffledQuestions, currentQuestionIndex, score;
 
@@ -113,6 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to start the quiz
     function startQuiz() {
         score = 0;
+        scoreHeader.textContent = score;
         startButton.classList.add('hide');
         shuffledQuestions = questions.sort(() => Math.random() - .5);
         currentQuestionIndex = 0;
@@ -153,6 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (correct) {
             score++;
+            scoreHeader.textContent = score;
             selectedButton.classList.add('correct');
             correctSound.play();
         } else {
