@@ -1,41 +1,96 @@
-# Online Quiz Project
+# Online Quiz (Javascript Project)
 
-## Overview
-This Online Quiz is an engaging web application designed to test users' knowledge across various topics. Built with HTML, CSS, and JavaScript, it offers a dynamic and interactive experience, providing real-time feedback on users' answers and displaying their scores at the end.
+## Project Overview
+
+Welcome to the Online Quiz, an engaging web application designed to test your general knowledge across various subjects. Users can enjoy a challenging quiz experience while tracking their scores, making it both entertaining and educational.
+
+![Online Quiz Logo](images/logo.png)
+
+## Table of Contents
+
+1. [Features](#features)
+2. [User Experience (UX)](#user-experience-ux)
+    - [User Stories](#user-stories)
+    - [Design](#design)
+3. [Technologies Used](#technologies-used)
+4. [Testing](#testing)
+5. [Deployment](#deployment)
+6. [Credits](#credits)
+7. [Acknowledgements](#acknowledgements)
 
 ## Features
-- **Real-Time Feedback:** Users receive immediate alerts indicating whether their answer is correct or incorrect, enhancing the interactive experience.
-- **Comprehensive Question Set:** The quiz includes a diverse set of 5 questions, covering different knowledge areas to challenge users effectively.
-- **Score Tracking:** The application tracks the user's score throughout the quiz, displaying the final tally at the end to gauge performance.
-- **Responsive Design:** Ensures a seamless experience across different devices and screen sizes, making the quiz accessible to a wide audience.
 
-## Getting Started
-To run this quiz on your local machine, follow these simple setup instructions.
+- **Score Tracking**: Keeps track of the user’s score throughout the quiz.
+(images/score.png)
+- **Questions with Multiple Choices**: Each question offers four possible answers.
+(images/questions.png)
+- **Feedback on Answers**: Immediate feedback on whether the selected answer is correct or incorrect through sound effects.
+- **Final Score Display**: Shows the user’s score at the end of the quiz.
+(images/quiz)
+- **Restart Quiz Option**: Allows users to retake the quiz.
+(images/restart)
 
-### Prerequisites
-- Any modern web browser like Chrome, Firefox, Safari, or Edge.
+## User Experience (UX)
 
-### Installation
-1. Clone the repository to your local machine:
-   ```sh
-   git clone https://github.com/your_username/Online-Quiz.git
-Open the index.html file in your web browser to start the quiz.
-Usage
-Click the "Start Quiz" button to begin. Select your answers to each question as they appear. After submitting an answer, you'll receive immediate feedback. The quiz concludes with your total score, and you can restart it by clicking the "Restart Quiz" button.
+### User Stories
 
-Contributing
-Contributions to improve the quiz or add new features are welcome. Please follow these steps to contribute:
+- **As a user,** I want to start the quiz easily from the homepage.
+- **As a user,** I want to receive immediate feedback on my answers.
+- **As a user,** I want to see my final score at the end of the quiz.
+- **As a user,** I want to have the option to restart the quiz.
 
-Fork the project repository.
-Create a new branch (git checkout -b feature/YourFeature).
-Commit your changes (git commit -m 'Add some YourFeature').
-Push to the branch (git push origin feature/YourFeature).
-Open a Pull Request.
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+### Design
 
-Contact
-Project Link: https://nanaantwii.github.io/JavaScript-Project/
-Acknowledgements
-Font Awesome for icons.
-Normalize.css for CSS reset.
+- **Logo**: A vibrant and engaging logo to be recognisable to users.
+- **Typography**: Clear and readable fonts.
+- **Layout**: Intuitive layout with clear navigation and responsive design for various devices.
+
+## Technologies Used
+
+- **HTML5**: For the structure of the web pages.
+- **CSS3**: For styling the web pages.
+- **JavaScript**: For interactive elements and quiz functionality.
+- **Git & GitHub**: For version control and project deployment.
+
+## Testing
+
+- **HTML Validation**: Passed through the W3C Markup Validation Service.
+- **CSS Validation**: Passed through the W3C CSS Validation Service (Jigsaw).
+- **JavaScript Linting**: Passed through JSHint with no significant issues.
+- **Responsiveness**: Tested on various devices and screen sizes to ensure responsive design.
+- **Browser Compatibility**: Tested on multiple browsers, including Chrome, Firefox, Safari, and Edge.
+
+## Deployment
+
+The project is deployed on GitHub Pages:
+
+1. **Clone the Repository**: `git clone https://github.com/nanaantwii/JavaScript-Project`
+2. **Navigate to the Repository**: `cd JavaScript-Project`
+3. **Open `index.html` in Your Browser**.
+
+To deploy on GitHub Pages:
+
+1. Push the code to the `main` branch of your repository.
+2. In the repository settings, navigate to the "Pages" section.
+3. Select the `main` branch as the source and save.
+
+The live link to the project: [Online Quiz](https://nanaantwii.github.io/JavaScript-Project/)
+
+## Credits
+
+### Content
+
+- Questions sourced from general knowledge databases and trivia sites.
+
+### Media
+
+- **Sounds**: Sourced from [Pixabay](https://pixabay.com/).
+- **Logo**: Created using [Canva](https://www.canva.com/).
+
+### Code
+
+- The project structure and some code snippets were inspired by tutorials from [Code Institute](https://codeinstitute.net/).
+
+## Acknowledgements
+
+I would like to thank my mentors and the community at Code Institute for their guidance and support throughout the development of this project.
