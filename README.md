@@ -26,9 +26,9 @@ Welcome to the Online Quiz, an engaging web application designed to test your ge
 ![questions](images/questions.png)
 - **Feedback on Answers**: Immediate feedback on whether the selected answer is correct or incorrect through sound effects.
 - **Final Score Display**: Shows the user’s score at the end of the quiz.
-![quiz](images/quiz)
+![quiz](images/quiz.png)
 - **Restart Quiz Option**: Allows users to retake the quiz.
-![restart](images/restart)
+![restart](images/restart.png)
 
 ## User Experience (UX)
 
