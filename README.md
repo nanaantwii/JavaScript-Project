@@ -21,14 +21,14 @@ Welcome to the Online Quiz, an engaging web application designed to test your ge
 ## Features
 
 - **Score Tracking**: Keeps track of the user’s score throughout the quiz.
-(images/score.png)
+![Score](images/score.png)
 - **Questions with Multiple Choices**: Each question offers four possible answers.
-(images/questions.png)
+![questions](images/questions.png)
 - **Feedback on Answers**: Immediate feedback on whether the selected answer is correct or incorrect through sound effects.
 - **Final Score Display**: Shows the user’s score at the end of the quiz.
-(images/quiz)
+![quiz](images/quiz)
 - **Restart Quiz Option**: Allows users to retake the quiz.
-(images/restart)
+![restart](images/restart)
 
 ## User Experience (UX)
 
