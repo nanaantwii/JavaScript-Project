@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const finalScoreElement = document.getElementById('final-score');
     const progressBar = document.getElementById('progress');
     const scoreHeader = document.getElementById('current-score');
+    const restartButton = document.getElementById('restart-btn');
     
     let shuffledQuestions, currentQuestionIndex, score;
 
@@ -110,6 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Event listener for start button click
     startButton.addEventListener('click', startQuiz);
+    // Event listener for restart button click
+    restartButton.addEventListener('click', restartQuiz);
 
     // Function to start the quiz
     function startQuiz() {
@@ -195,13 +198,13 @@ document.addEventListener('DOMContentLoaded', () => {
         progressBar.style.width = progressPercentage + '%';
     }
 
-    // Event listener for restart button click
-    document.getElementById('restart-btn').addEventListener('click', restartQuiz);
-
     // Function to restart the quiz
     function restartQuiz() {
         resultsContainer.classList.add('hide');
         startButton.classList.remove('hide');
+        scoreHeader.textContent = 0;
+        score = 0;
         resetState();
+        startQuiz();
     }
 });
