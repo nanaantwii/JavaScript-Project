@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/main.css">
     <!-- Favicon -->
     <link rel="icon" href="images/favicon.ico">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lobster&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header section -->
@@ -15,7 +17,7 @@
         <!-- Logo positioned in the left corner -->
         <img src="images/logo.png" alt="Quiz Logo" class="logo">
         <!-- Main title centered -->
-        <h1>Quizzy Mind </h1>
+        <h1>Online Quiz</h1>
         <!-- Score display in the header -->
         <div id="score-header">Score: <span id="current-score">0</span></div>
     </header>
@@ -26,9 +28,9 @@
         <div id="quiz-container">
             <!-- Quiz header with welcome message and start button -->
             <div id="quiz-header">
-                <h2>Welcome to the QuizzyMind Quiz</h2>
+                <h2>Welcome to the Quiz</h2>
                 <p>Test your knowledge with our fun quiz!</p>
-                <button id="start-btn">Start Quiz</button>
+                <button id="start-btn" class="btn">Start Quiz</button>
             </div>
             <!-- Container for questions and answers, hidden initially -->
             <div id="question-container" class="hide">
@@ -46,14 +48,14 @@
             <!-- Container for displaying results, hidden initially -->
             <div id="results-container" class="hide">
                 <h2 id="final-score"></h2>
-                <button id="restart-btn">Restart Quiz</button>
+                <button id="restart-btn" class="btn">Restart Quiz</button>
             </div>
         </div>
     </main>
 
     <!-- Footer section -->
     <footer>
-        <p>&copy; 2023 QuizzyMind</p>
+        <p>&copy; 2023 Online Quiz</p>
     </footer>
 
     <!-- Link to external JavaScript file -->

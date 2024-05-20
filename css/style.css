@@ -1,12 +1,16 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lobster&display=swap');
+
 /* Basic styling for body and html to ensure full height and zero margin */
 body, html {
     height: 100%;
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: #333;
 }
 
 /* Styling for the header section */
@@ -16,7 +20,7 @@ header {
     align-items: center;
     width: 100%;
     padding: 10px 20px;
-    background-color: #fff;
+    background-color: #ffffffcc;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     position: fixed;
     top: 0;
@@ -34,11 +38,14 @@ header h1 {
     flex-grow: 1;
     text-align: center;
     margin: 0;
+    font-family: 'Lobster', cursive;
+    color: #2979ff;
 }
 
 /* Styling for the score display in the header */
 #score-header {
     font-size: 1.2em;
+    font-weight: bold;
 }
 
 /* Ensuring main content is centered and spaced appropriately */
@@ -55,7 +62,7 @@ main {
 #quiz-container {
     width: 90%;
     max-width: 600px;
-    background: #fff;
+    background: #ffffffcc;
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     padding: 20px;
@@ -82,7 +89,7 @@ main {
 }
 
 /* Basic button styling with hover effects */
-button {
+button.btn {
     cursor: pointer;
     background-color: #2979ff;
     color: #ffffff;
@@ -90,11 +97,12 @@ button {
     border-radius: 5px;
     padding: 15px 25px;
     font-size: 18px;
+    font-weight: bold;
     transition: background-color 0.3s, transform 0.3s;
 }
 
 /* Hover effect for buttons */
-button:hover {
+button.btn:hover {
     background-color: #1c54b2;
     transform: scale(1.05);
 }
@@ -129,10 +137,19 @@ button:hover {
     animation: fadeIn 1s ease-in-out;
 }
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
+/* Styling for the footer section */
+footer {
+    padding: 10px 20px;
+    background-color: #ffffffcc;
+    width: 100%;
     text-align: center;
-  }
-  
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+footer p {
+    margin: 0;
+    color: #555;
+}
