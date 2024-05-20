@@ -119,7 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
         score = 0;
         scoreHeader.textContent = score;
         startButton.classList.add('hide');
-        resultsContainer.classList.add('hide');
         shuffledQuestions = questions.sort(() => Math.random() - .5);
         currentQuestionIndex = 0;
         questionContainerElement.classList.remove('hide');
@@ -201,12 +200,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to restart the quiz
     function restartQuiz() {
-        score = 0;
-        scoreHeader.textContent = score;
         resultsContainer.classList.add('hide');
         startButton.classList.remove('hide');
+        scoreHeader.textContent = 0;
+        score = 0;
         resetState();
-        questionContainerElement.classList.add('hide');
-        setNextQuestion();
+        startQuiz();
     }
 });
